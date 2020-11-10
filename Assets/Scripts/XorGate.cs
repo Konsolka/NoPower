@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class XorGate : MonoBehaviour
 {
-	private bool _xor;
+	public GameMechanics mechanics;
 	public GameObject [] wireLinesIn;
 	public GameObject [] wireLineOut;
 	public Material [] material;
@@ -17,7 +17,7 @@ public class XorGate : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (getWireLineStates())
+		if (mechanics.getWireLineStates(wireLinesIn))
 		{
 			rend.sharedMaterial = material[1];
 			for (int i = 0; i < wireLineOut.Length; i++)
@@ -30,14 +30,6 @@ public class XorGate : MonoBehaviour
 				wireLineOut[i].tag = "Off";
 		}
 	}
-	private bool getWireLineStates()
-	{
-		_xor = wireLinesIn[0].tag == "On" ? true : false;
-		for (int i = 1; i < wireLinesIn.Length; i++)
-		{
-			_xor ^= wireLinesIn[i].tag == "On" ? true : false;
-		}
-		return (_xor);
-	}
+
 	
 }

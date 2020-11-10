@@ -7,6 +7,7 @@ public class AndGate : MonoBehaviour
 	public GameObject [] wireLinesIn;
 	public GameObject [] wireLineOut;
 	public Material [] material;
+	public GameMechanics mechanics;
 	Renderer rend;
 	private void Start()
 	{

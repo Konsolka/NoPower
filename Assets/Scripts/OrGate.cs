@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OrGate : MonoBehaviour
 {
+	public GameMechanics mechanics;
 	public GameObject [] wireLinesIn;
 	public GameObject [] wireLineOut;
 	public Material [] material;
@@ -16,7 +17,7 @@ public class OrGate : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (getWireLineStates())
+		if (mechanics.getWireLineStates(wireLinesIn))
 		{
 			rend.sharedMaterial = material[1];
 			for (int i = 0; i < wireLineOut.Length; i++)
@@ -29,13 +30,5 @@ public class OrGate : MonoBehaviour
 				wireLineOut[i].tag = "Off";
 		}
 	}
-	private bool getWireLineStates()
-	{
-		for (int i = 0; i < wireLinesIn.Length; i++)
-		{
-			if (wireLinesIn[i].tag == "On")
-			return (true);
-		}
-		return (false);
-	}
+
 }

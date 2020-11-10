@@ -6,28 +6,20 @@ using UnityEngine;
 
 public class WireStateChange : MonoBehaviour
 {
-	public Material [] material;
+	public matReturn materials;
+	public GameMechanics mechanics;
 	private bool _state;
 	Renderer rend;
 	private void Start()
 	{
-		changeMaterial(material[0]);
+		mechanics.changeWireLine(gameObject, materials.retMatOff());
 	}
 	private void Update()
 	{
 		if (gameObject.tag == "Off")
-			changeMaterial(material[0]);
+			mechanics.changeWireLine(gameObject, materials.retMatOff());
 		else
-			changeMaterial(material[1]);
+			mechanics.changeWireLine(gameObject, materials.retMatOn());
 	}
-	void changeMaterial(Material material)
-	{
-		Renderer rend;
-		for (int i = 0; i < gameObject.transform.childCount; i++)
-		{
-				Transform child = gameObject.transform.GetChild(i).GetChild(1);
-				rend = child.GetComponent<Renderer>();
-				rend.sharedMaterial = material;
-		}
-	}
+
 }

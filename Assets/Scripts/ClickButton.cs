@@ -3,24 +3,25 @@ using System.Collections;
 
 public class ClickButton : MonoBehaviour
 {
-	public Material [] material;
+	public GameMechanics mechanics;
+	public matReturn material;
 	public GameObject [] wireLine;
 	public bool isOn;
 	Renderer rend;
 
 	private void Start()
 	{
-		rend = gameObject.transform.GetChild(0).GetChild(1).GetComponent<Renderer>();
+		rend = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Renderer>();
 		rend.enabled = true;
 		if (isOn)
 		{
-			rend.sharedMaterial = material[1];
-			changeTag("On");
+			mechanics.changeTag(wireLine, "On");
+			rend.sharedMaterial = material.retMatOn();
 		}
 		else
 		{
-			rend.sharedMaterial = material[0];
-			changeTag("Off");
+			mechanics.changeTag(wireLine, "Off");
+			rend.sharedMaterial = material.retMatOff();
 		}
 	}
 	private void OnMouseDown()
@@ -28,19 +29,14 @@ public class ClickButton : MonoBehaviour
 		if (isOn)
 		{
 			isOn = false;
-			rend.sharedMaterial = material[0];
-			changeTag("Off");
+			rend.sharedMaterial = material.retMatOff();
+			mechanics.changeTag(wireLine, "Off");
 		}
 		else
 		{
 			isOn = true;
-			rend.sharedMaterial = material[1];
-			changeTag("On");
+			rend.sharedMaterial = material.retMatOn();
+			mechanics.changeTag(wireLine, "On");
 		}
-	}
-	void changeTag(string str)
-	{
-		for (int i = 0; i < wireLine.Length; i++)
-			wireLine[i].tag = str;
 	}
 }

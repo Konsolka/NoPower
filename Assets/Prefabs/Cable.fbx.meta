@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2619d686cb10920448009338eabfbee5
+guid: 46e62ee6eba2425459aebbc97e8d74fc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Carbon
-    second: {fileID: 2100000, guid: 1f9a758de8052f242b38af2a05d101ea, type: 2}
+      name: CableLight
+    second: {fileID: 2100000, guid: 8fd4cd14161f94e4ba204cb7e88a81fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterMaterial
+    second: {fileID: 2100000, guid: 239c10c6381686942baf6195694f85e0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
