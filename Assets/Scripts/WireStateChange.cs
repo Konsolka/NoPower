@@ -13,6 +13,7 @@ public class WireStateChange : MonoBehaviour
 	private void Start()
 	{
 		mechanics.changeWireLine(gameObject, materials.retMatOff());
+		gameObject.tag = "Off";
 	}
 	private void Update()
 	{

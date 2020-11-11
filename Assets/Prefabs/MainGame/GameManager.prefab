@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 2
-  completeLevelUI: {fileID: 0}
+  completeLevelUI: {fileID: 4574582897872016830, guid: ae5e9983c2308504cad73078aeea058a,
+    type: 3}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ebd4e3a9be143a40b827a22771b03f9
+guid: 4ae8604170fa08f41917e04294047967
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Carbon
+      name: OuterMatarial
     second: {fileID: 2100000, guid: c168164e7ad7617428282758d1dd5918, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 2fecae1ac08e4644cb4744c8cb8a5a77, type: 2}
+      name: Sphere
+    second: {fileID: 2100000, guid: 26ec23ed2d43a3241a77ed5e3fe7d0f4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
