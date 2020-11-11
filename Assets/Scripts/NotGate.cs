@@ -11,23 +11,30 @@ public class NotGate : MonoBehaviour
 	private bool state;
 	private void Start()
 	{
-		state = false;
+		state = true;
+		if (wireLineIn == null)
+		{
+			state = false;
+			wireLineOut.tag = "On";
+		}
 		rend = gameObject.transform.GetChild(2).GetComponent<Renderer>();
 		rend.enabled = true;
 		rend.sharedMaterial = material.retMatOn();
 	}
 	private void Update()
 	{
-		state = wireLineIn.tag == "Off" ? true : false;
 		if (state)
 		{
-			rend.sharedMaterial = material.retMatOn();
-			wireLineOut.tag = "On";
-		}
-		else if (!state)
-		{
-			rend.sharedMaterial = material.retMatOff();
-			wireLineOut.tag = "Off";
+			if (wireLineIn.tag == "Off")
+			{
+				rend.sharedMaterial = material.retMatOn();
+				wireLineOut.tag = "On";
+			}
+			else if (wireLineIn.tag == "On")
+			{
+				rend.sharedMaterial = material.retMatOff();
+				wireLineOut.tag = "Off";
+			}
 		}
 	}
 }
