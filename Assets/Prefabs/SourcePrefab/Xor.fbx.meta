@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e92037f5d124ac4cae763545d7d1d3a
+guid: 5949a9da4f647cf4ebcab259d776c2b1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Carbon
-    second: {fileID: 2100000, guid: 1f9a758de8052f242b38af2a05d101ea, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 8fd4cd14161f94e4ba204cb7e88a81fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterMaterial
+    second: {fileID: 2100000, guid: 34dd23298222b574f9b422d517a3ea35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TextMaterial
+    second: {fileID: 2100000, guid: de5a24b0b8f431f45924c09f0325bc20, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

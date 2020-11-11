@@ -25,7 +25,7 @@ public class GameMechanics : MonoBehaviour
 		}
 		return (false);
 	}
-	public bool getWireLineStates(GameObject [] wireLine)
+	public bool getWireLineStatesXorGate(GameObject [] wireLine)
 	{
 		bool xor;
 

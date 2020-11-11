@@ -5,29 +5,30 @@ using UnityEngine;
 public class XorGate : MonoBehaviour
 {
 	public GameMechanics mechanics;
+	public matReturn material;
 	public GameObject [] wireLinesIn;
 	public GameObject [] wireLineOut;
-	public Material [] material;
 	Renderer rend;
+	private bool state;
 	private void Start()
 	{
+		state = false;
 		rend = gameObject.transform.GetChild(1).GetComponent<Renderer>();
 		rend.enabled = true;
-		rend.sharedMaterial = material[0];
+		rend.sharedMaterial = material.retMatOff();
 	}
 	private void Update()
 	{
-		if (mechanics.getWireLineStates(wireLinesIn))
+		state = mechanics.getWireLineStatesXorGate(wireLinesIn);
+		if (state)
 		{
-			rend.sharedMaterial = material[1];
-			for (int i = 0; i < wireLineOut.Length; i++)
-				wireLineOut[i].tag = "On";
+			rend.sharedMaterial = material.retMatOn();
+			mechanics.changeTag(wireLineOut, "On");
 		}
-		else
+		else if (!state)
 		{
-			rend.sharedMaterial = material[0];
-			for (int i = 0; i < wireLineOut.Length; i++)
-				wireLineOut[i].tag = "Off";
+			rend.sharedMaterial = material.retMatOff();
+			mechanics.changeTag(wireLineOut, "Off");
 		}
 	}
 

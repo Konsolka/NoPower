@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class NotGate : MonoBehaviour
 {
-	public GameObject wireLinesIn;
+	public GameObject wireLineIn;
 	public GameObject wireLineOut;
-	public Material [] material;
+	public matReturn material;
 	Renderer rend;
+	private bool state;
 	private void Start()
 	{
+		state = false;
 		rend = gameObject.transform.GetChild(2).GetComponent<Renderer>();
 		rend.enabled = true;
-		rend.sharedMaterial = material[1];
+		rend.sharedMaterial = material.retMatOn();
 	}
 	private void Update()
 	{
-		if (wireLinesIn.tag == "Off")
+		state = wireLineIn.tag == "Off" ? true : false;
+		if (state)
 		{
-			rend.sharedMaterial = material[1];
+			rend.sharedMaterial = material.retMatOn();
 			wireLineOut.tag = "On";
 		}
-		else
+		else if (!state)
 		{
-			rend.sharedMaterial = material[0];
+			rend.sharedMaterial = material.retMatOff();
 			wireLineOut.tag = "Off";
 		}
 	}

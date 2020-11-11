@@ -4,43 +4,30 @@ using UnityEngine;
 
 public class AndGate : MonoBehaviour
 {
+	public matReturn material;
+	public GameMechanics mechanics;
 	public GameObject [] wireLinesIn;
 	public GameObject [] wireLineOut;
-	public Material [] material;
-	public GameMechanics mechanics;
 	Renderer rend;
+	private bool state;
 	private void Start()
 	{
-		rend = gameObject.transform.GetChild(2).GetComponent<Renderer>();
+		rend = gameObject.transform.GetChild(1).GetComponent<Renderer>();
 		rend.enabled = true;
-		rend.sharedMaterial = material[0];
-		setToTag("Off");
+		rend.sharedMaterial = material.retMatOff();
 	}
 	private void Update()
 	{
-		if (getWireLineStates())
+		state = mechanics.getWireLineStatesAndGate(wireLinesIn);
+		if (state)
 		{
-			rend.sharedMaterial = material[1];
-			setToTag("On");
+			rend.sharedMaterial = material.retMatOn();
+			mechanics.changeTag(wireLineOut, "On");
 		}
 		else
 		{
-			rend.sharedMaterial = material[0];
-			setToTag("Off");
+			rend.sharedMaterial = material.retMatOff();
+			mechanics.changeTag(wireLineOut, "Off");
 		}
-	}
-	private bool getWireLineStates()
-	{
-		for (int i = 0; i < wireLinesIn.Length; i++)
-		{
-			if (wireLinesIn[i].tag == "Off")
-			return (false);
-		}
-		return (true);
-	}
-	private void setToTag(string tag)
-	{
-		for (int i = 0; i < wireLineOut.Length; i++)
-			wireLineOut[i].tag = tag;
 	}
 }

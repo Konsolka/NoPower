@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46e62ee6eba2425459aebbc97e8d74fc
+guid: ea0c7d2dbf608a94b9939baf83f3f836
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CableLight
+      name: Material
     second: {fileID: 2100000, guid: 8fd4cd14161f94e4ba204cb7e88a81fa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: OuterMaterial
-    second: {fileID: 2100000, guid: 239c10c6381686942baf6195694f85e0, type: 2}
+    second: {fileID: 2100000, guid: 34dd23298222b574f9b422d517a3ea35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TextMaterial
+    second: {fileID: 2100000, guid: de5a24b0b8f431f45924c09f0325bc20, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

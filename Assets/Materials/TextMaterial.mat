@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OuterMaterial 1
+  m_Name: TextMaterial
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -71,11 +71,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.0005155073, g: 0.0005155073, b: 0.0005155073, a: 1}
-    - _Color: {r: 0.0005155073, g: 0.0005155073, b: 0.0005155073, a: 1}
+    - _BaseColor: {r: 0.00060705387, g: 0.0006070539, b: 0.000607054, a: 1}
+    - _Color: {r: 0.00060705387, g: 0.0006070539, b: 0.000607054, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
---- !u!114 &2209123965360345238
+--- !u!114 &8793701408484877182
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

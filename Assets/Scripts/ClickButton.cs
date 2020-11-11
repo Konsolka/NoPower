@@ -11,7 +11,7 @@ public class ClickButton : MonoBehaviour
 
 	private void Start()
 	{
-		rend = gameObject.transform.GetChild(0).GetChild(2).GetComponent<Renderer>();
+		rend = gameObject.transform.GetChild(2).GetComponent<Renderer>();
 		rend.enabled = true;
 		if (isOn)
 		{
