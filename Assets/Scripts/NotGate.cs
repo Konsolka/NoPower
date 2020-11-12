@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NotGate : MonoBehaviour
 {
@@ -12,14 +10,15 @@ public class NotGate : MonoBehaviour
 	private void Start()
 	{
 		state = true;
+		wireLineOut.tag = "Off";
 		if (wireLineIn == null)
 		{
 			state = false;
 			wireLineOut.tag = "On";
 		}
-		rend = gameObject.transform.GetChild(2).GetComponent<Renderer>();
+		rend = gameObject.transform.GetChild(1).GetComponent<Renderer>();
 		rend.enabled = true;
-		rend.sharedMaterial = material.retMatOn();
+		rend.sharedMaterial = material.retMatOn();	
 	}
 	private void Update()
 	{
@@ -36,5 +35,7 @@ public class NotGate : MonoBehaviour
 				wireLineOut.tag = "Off";
 			}
 		}
+		else
+			wireLineOut.tag = "On";
 	}
 }
