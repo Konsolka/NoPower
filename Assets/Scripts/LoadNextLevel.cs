@@ -10,4 +10,8 @@ public class LoadNextLevel : MonoBehaviour
 	{
 		SceneManager.LoadScene(0);
 	}
+	public void LoadLevel(int level)
+	{
+		SceneManager.LoadScene(level);
+	}
 }
